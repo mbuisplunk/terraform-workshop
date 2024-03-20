@@ -10,7 +10,7 @@
 SPLUNK_ALERT_MUTE_START=0
 SPLUNK_ALERT_MUTE_STOP=0
 #put a valid API token value here. hint: don't use an ingest token ;)
-SPLUNK_API_TOKEN="B33oW7QgMGmeZrpn_SoOgw"
+SPLUNK_API_TOKEN=""
 
 #Create catch all detector muting rule
 #curl -X "POST" "https://api.us1.signalfx.com/v2/alertmuting" -H "Content-Type: application/json" -H "X-SF-TOKEN: $SPLUNK_API_TOKEN" -d '{"description": "mute all detectors","filters": [{"NOT": true,"property":"muteall","propertyValue":["muteall"]}],"sendAlertsOnceMutingPeriodHasEnded":false,"startTime":'$SPLUNK_ALERT_MUTE_START',"stopTime":'$SPLUNK_ALERT_MUTE_STOP'}'

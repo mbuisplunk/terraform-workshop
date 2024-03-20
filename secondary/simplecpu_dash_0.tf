@@ -10,7 +10,7 @@ resource "signalfx_time_chart" "simplecpu_dash_0_0" {
     plot_type          = "LineChart"
     program_text       = <<-EOF
         A = data('cpu.utilization').publish(label='A')
-        B = alerts(detector_id="GHUcAwBAwAE").publish(label="B");
+        B = alerts(detector_id="${signalfx_detector.detector.id}").publish(label="B");
     EOF
     show_data_markers  = false
     show_event_lines   = false
